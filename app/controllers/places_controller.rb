@@ -1,21 +1,23 @@
 class PlacesController < ApplicationController
 
   def index
-    @places = Place.all
+      @places = Place.where({"user_id" => @current_user["id"]})
   end
 
   def show
-    @place = Place.find_by({ "id" => params["id"] })
-    @posts = Post.where({ "place_id" => @place["id"] })
+      @place = Place.find_by({ "id" => params["id"] })
+      @posts = Post.where({ "place_id" => @place["id"] })
   end
 
   def new
     @place = Place.new
+
   end
 
   def create
     if @current_user 
     @place = Place.new
+    @place["user_id"] = @current_user["id"] 
     @place["name"] = params["place"]["name"]
     @place.save
   else
