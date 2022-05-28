@@ -1,7 +1,9 @@
 class PlacesController < ApplicationController
 
   def index
-      @places = Place.where({"user_id" => @current_user["id"]})
+    if @current_user
+       @places = Place.where({"user_id" => @current_user["id"]})
+    end
   end
 
   def show
@@ -11,7 +13,6 @@ class PlacesController < ApplicationController
 
   def new
     @place = Place.new
-
   end
 
   def create
