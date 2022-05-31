@@ -2,23 +2,24 @@
 
 <%= form_with :model => @user do |form| %>
   <p>
-    <%= form.label "username" %>
-    <%= form.text_field "username" %>
+    <%= form.label "username", class: "form-label" %> 
+    <%= form.text_field "username",  class: "form-control"%>
   </p>
    </p>
-    <%= form.label "first_name"%>
-    <%= form.text_field "first_name"%>
-
-    <%= form.label "last_name"%>
-    <%= form.text_field "last_name"%>
+    <%= form.label "first_name", class: "form-label"%>
+    <%= form.text_field "first_name",  class: "form-control"%>
   <p>
-  <p>
-    <%= form.label "email" %>
-    <%= form.text_field "email" %>
+    <%= form.label "last_name", class: "form-label"%>
+    <%= form.text_field "last_name",  class: "form-control"%>
   </p>
   <p>
-    <%= form.label "password" %>
-    <%= form.text_field "password" %>
+  <p>
+    <%= form.label "email", class: "form-label" %>
+    <%= form.text_field "email",  class: "form-control" %>
+  </p>
+  <p>
+    <%= form.label "password", class: "form-label" %>
+    <%= form.text_field "password",  class: "form-control" %>
  <p>
     <%= form.submit "Sign up" %>
   </p>
