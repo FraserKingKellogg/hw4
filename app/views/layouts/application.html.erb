@@ -27,10 +27,10 @@
         <ul class="navbar-nav mb-2 mb-lg-0">
           <% if @current_user %>
             Logged in as: <%= @current_user["first_name"] %> |
-            <a href="/logout" class="btn btn-default">Logout</a>
+            <a href="/logout" class="btn btn-outline-success">Logout</a>
           <% else %>
-            <a href="/login" class="btn btn-default">Login</a> |
-            <a href="/users/new" class="btn btn-default">Sign Up</a>
+            <a href="/login"  class="btn btn-outline-primary">Login</a> |
+            <a href="/users/new"  class="btn btn-outline-success">Sign Up</a>
           <% end %>
         </div>
   

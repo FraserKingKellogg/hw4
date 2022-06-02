@@ -1,16 +1,14 @@
 <h1>Destinations I have travelled too !</h1>
 
-
 <% if @current_user %>
 <ul>
-<p>
-  <a href="/places/new" class="btn btn-success" >New Place</a>
-</p>  
-  <% for place in @places %>
-    <li><a href="/places/<%= place["id"] %>"><%= place["name"] %></a></li>
-  <% end %>
+  <p>
+    <a href="/places/new" class="btn btn-success" >New Place</a>
+  </p>  
+      <% for place in @places %>
+      <li><a href="/places/<%= place["id"] %>"><%= place["name"] %></a></li>
+      <% end %>
 </ul>
-
 <% else %>
   You must first <a href="/login">login</a> to post.
 <% end %>
